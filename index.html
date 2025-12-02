@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShineRight Mobile Detailing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#e8f7ff, #c6e6ff);
+      color: #222;
+      overflow-x: hidden;
+    }
+    header {
+      background: #0099ff;
+      color: #fff;
+      padding: 40px;
+      text-align: center;
+      position: relative;
+    }
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    h2 { margin-top: 40px; }
+    .card {
+      background: #ffffffaa;
+      backdrop-filter: blur(4px);
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform .2s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .price { font-size: 22px; font-weight: bold; margin-bottom: 10px; color:#0077ff; }
+    .contact-box {
+      background: #0077ff;
+      color: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 40px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: pop 0.5s ease-in-out;
+    }
+    @keyframes pop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #fff;
+      color: #0077ff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #0099ff;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0077cc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ShineRight Mobile Detailing</h1>
+    <p>Fast • Affordable • I Come To You</p>
+
+    <div class="bubble" style="width:60px;height:60px;top:20px;left:20px;"></div>
+    <div class="bubble" style="width:40px;height:40px;top:80px;right:40px;"></div>
+    <div class="bubble" style="width:70px;height:70px;bottom:-10px;left:50%;"></div>
+  </header>
+
+  <section>
+    <h2>Services</h2>
+
+    <div class="card">
+      <div class="price">Basic Clean — $40</div>
+      <ul>
+        <li>Quick vacuum</li>
+        <li>Wipe surfaces</li>
+        <li>Windows cleaned</li>
+        <li>Exterior rinse & dry</li>
+        <li>Tire shine</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="price">Standard Detail — $70</div>
+      <ul>
+        <li>Deep vacuum</li>
+        <li>Seat shampoo</li>
+        <li>Interior scrub</li>
+        <li>Hand wash + wax</li>
+        <li>Windows cleaned</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="price">Premium Detail — $120</div>
+      <ul>
+        <li>Full interior shampoo</li>
+        <li>Carpet extraction</li>
+        <li>Steam clean</li>
+        <li>Foam wash</li>
+        <li>Wax + wheel polish</li>
+      </ul>
+    </div>
+
+    <h2>Add-Ons</h2>
+    <div class="card">
+      <ul>
+        <li>Pet Hair: +$20</li>
+        <li>Headlight Restoration: +$25</li>
+        <li>Engine Bay Clean: +$30</li>
+      </ul>
+    </div>
+
+    <div class="contact-box">
+      <h2>Book Now</h2>
+      <p>Text me to schedule your detail.</p>
+      <p><strong>Phone:</strong> 914-313-7140</p>
+      <p><strong>Email:</strong> ShineRightDetail@gmail.com</p>
+      <a class="btn" href="tel:9143137140">Call Now</a>
+    </div>
+
+    <h2>Booking Form</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="text" placeholder="Your Phone Number" required />
+      <input type="text" placeholder="Car Model (ex: Honda Civic)" required />
+      <textarea placeholder="Which service do you want? (Basic, Standard, Premium)" required></textarea>
+      <button type="submit">Submit Request</button>
+    </form>
+
+  </section>
+
+  <!-- Sticky Header Enhancement already exists -->
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-16">
+    <h2 class="text-4xl font-bold text-center text-blue-600 mb-10">Pricing</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 max-w-6xl mx-auto">
+      <div class="p-6 rounded-2xl shadow-lg bg-white/80 backdrop-blur pricing-card hover:scale-105 transition cursor-pointer">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Basic Wash</h3>
+        <p class="text-4xl font-bold mb-4">$40</p>
+        <p>Exterior wash, tire shine, windows.</p>
+      </div>
+      <div class="p-6 rounded-2xl shadow-lg bg-white/80 backdrop-blur pricing-card hover:scale-105 transition cursor-pointer">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Full Interior</h3>
+        <p class="text-4xl font-bold mb-4">$120</p>
+        <p>Vacuum, wipe-down, shampoo, deep clean.</p>
+      </div>
+      <div class="p-6 rounded-2xl shadow-lg bg-white/80 backdrop-blur pricing-card hover:scale-105 transition cursor-pointer">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Complete Detail</h3>
+        <p class="text-4xl font-bold mb-4">$250</p>
+        <p>Inside + outside, wax, full treatment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="py-16 bg-blue-50/50">
+    <h2 class="text-4xl font-bold text-center text-blue-700 mb-10">Customer Reviews</h2>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+        <p class="text-lg italic">“Best detailer in Westchester. My car looked brand new.”</p>
+        <p class="mt-4 font-bold">— Jason M.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+        <p class="text-lg italic">“Fast, professional, and super friendly. Highly recommend!”</p>
+        <p class="mt-4 font-bold">— Sarah K.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Placeholder Image Gallery -->
+  <section id="gallery" class="py-16">
+    <h2 class="text-4xl font-bold text-center text-blue-600 mb-10">Before & After Gallery</h2>
+    <p class="text-center text-gray-600 mb-6">(Replace these images with your real detailing photos)</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 max-w-6xl mx-auto">
+      <img src="https://via.placeholder.com/400x250?text=Before+Detail" class="rounded-xl shadow-md hover:scale-105 transition" />
+      <img src="https://via.placeholder.com/400x250?text=After+Detail" class="rounded-xl shadow-md hover:scale-105 transition" />
+      <img src="https://via.placeholder.com/400x250?text=Interior+Deep+Clean" class="rounded-xl shadow-md hover:scale-105 transition" />
+    </div>
+  </section>
+
+  <!-- Floating Bubble Animation -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none bubble-container"></div>
+
+  <script>
+    // Create floating bubbles
+    const bubbleContainer = document.querySelector('.bubble-container');
+    for (let i = 0; i < 20; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      bubble.style.left = Math.random() * 100 + '%';
+      bubble.style.animationDuration = 4 + Math.random() * 6 + 's';
+      bubble.style.opacity = 0.4 + Math.random() * 0.5;
+      bubbleContainer.appendChild(bubble);
+    }
+  </script>
+
+  <style>
+    /* Bubble Styles */
+    .bubble {
+      position: absolute;
+      bottom: -150px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(173, 216, 230, 0.6);
+      backdrop-filter: blur(4px);
+      animation: rise linear infinite;
+    }
+    @keyframes rise {
+      from {transform: translateY(0) scale(1);} 
+      to {transform: translateY(-120vh) scale(1.4);} 
+    }
+  </style>
+
+  <!-- Service Area Map -->
+  <section id="service-area" class="py-16 bg-blue-50/50">
+    <h2 class="text-4xl font-bold text-center text-blue-700 mb-6">Service Area</h2>
+    <p class="text-center text-gray-700 mb-6">We serve all locations within a 15-mile radius of Rye Brook, NY.</p>
+
+    <div class="max-w-4xl mx-auto px-6">
+      <iframe
+        width="100%"
+        height="450"
+        style="border:0; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-FAKE-KEY-PLACEHOLDER&q=Rye+Brook,NY&zoom=11">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why-us" class="py-16">
+    <h2 class="text-4xl font-bold text-center text-blue-700 mb-10">Why Choose CleanWave Detailing?</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
+      <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition why-card">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Mobile Convenience</h3>
+        <p>We come straight to your house so you don’t waste any time waiting at a shop.</p>
+      </div>
+
+      <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition why-card">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Top Quality Results</h3>
+        <p>Your car gets professional-level cleaning that makes it look and feel brand new.</p>
+      </div>
+
+      <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition why-card">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Friendly, Fast Service</h3>
+        <p>We focus on great communication, fast work, and making every customer happy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Card Animation -->
+  <style>
+    .why-card:hover {
+      transform: translateY(-6px);
+    }
+  </style>
+
+  <!-- Floating Bubbles + Scripts Stay Here -->
+</body>
+</html>
