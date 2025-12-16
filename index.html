@@ -3,317 +3,349 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShineRight Mobile Detailing</title>
+  <title>CleanWave Detailing | Mobile Auto Detailing in Westchester</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(#e8f7ff, #c6e6ff);
-      color: #222;
-      overflow-x: hidden;
+    :root {
+      --blue-900: #0b3b60;
+      --blue-700: #1368aa;
+      --blue-500: #1aa3ff;
+      --blue-100: #e8f5ff;
+      --sand: #f7f3ed;
+      --text: #16222e;
+      --muted: #4b5563;
+      --card: #ffffffcc;
+      --shadow: 0 18px 40px rgba(0, 36, 66, 0.16);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f9fcff 0%, #eef6ff 32%, #f7f3ed 100%);
+      scroll-behavior: smooth;
     }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { line-height: 1.6; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
     header {
-      background: #0099ff;
-      color: #fff;
-      padding: 40px;
-      text-align: center;
+      background: radial-gradient(circle at 20% 20%, rgba(26,163,255,0.25), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(19,104,170,0.22), transparent 30%),
+                  linear-gradient(120deg, #0f4b7a, #0b3b60 60%, #082c48);
+      color: #f7fbff;
+      border-radius: 0 0 36px 36px;
+      box-shadow: var(--shadow);
+      padding: 1rem 1.5rem 5rem;
       position: relative;
+      overflow: hidden;
     }
-    .bubble {
+
+    header::after, header::before {
+      content: '';
       position: absolute;
+      width: 320px;
+      height: 320px;
+      background: rgba(255, 255, 255, 0.06);
       border-radius: 50%;
-      background: rgba(255,255,255,0.5);
-      animation: float 6s ease-in-out infinite;
+      filter: blur(8px);
     }
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0); }
+    header::after { top: -140px; right: -80px; }
+    header::before { bottom: -180px; left: -120px; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 2rem;
     }
-    section {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-      animation: fadeIn 1s ease-in-out;
+
+    .brand { font-weight: 700; letter-spacing: 0.02em; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { background: rgba(255,255,255,0.1); padding: 0.45rem 0.8rem; border-radius: 999px; }
+
+    .nav-links { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .nav-links a { font-weight: 600; padding: 0.5rem 0.9rem; border-radius: 10px; transition: background 0.2s ease; }
+    .nav-links a:hover { background: rgba(255,255,255,0.08); }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fff;
+      color: var(--blue-900);
+      padding: 0.7rem 1.15rem;
+      border-radius: 12px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      border: 2px solid rgba(255,255,255,0.4);
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0,0,0,0.22); }
+
+    .hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.2rem; align-items: center; z-index: 1; position: relative; }
+    .hero h1 { font-size: clamp(2rem, 3vw + 1rem, 3.4rem); margin-bottom: 1rem; line-height: 1.15; }
+    .hero p { color: #e3efff; margin-bottom: 1.2rem; font-size: 1.05rem; }
+    .hero .badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.12); padding: 0.4rem 0.9rem; border-radius: 999px; font-weight: 600; margin-bottom: 1rem; }
+
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 1.4rem;
+      border-radius: 18px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.15);
     }
-    h2 { margin-top: 40px; }
+
+    .stats { display: flex; gap: 1.5rem; flex-wrap: wrap; color: #dff0ff; margin-top: 1rem; }
+    .stat { flex: 1 1 140px; }
+    .stat strong { display: block; font-size: 1.6rem; }
+
+    section { margin-top: 4rem; }
+    section h2 { font-size: clamp(1.7rem, 2vw + 1rem, 2.4rem); margin-bottom: 0.5rem; color: var(--blue-900); }
+    section p.lead { color: var(--muted); margin-bottom: 1.4rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
     .card {
-      background: #ffffffaa;
-      backdrop-filter: blur(4px);
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform .2s;
+      background: var(--card);
+      border: 1px solid rgba(13, 58, 91, 0.06);
+      border-radius: 16px;
+      padding: 1.2rem 1.3rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .card:hover {
-      transform: scale(1.03);
-    }
-    .price { font-size: 22px; font-weight: bold; margin-bottom: 10px; color:#0077ff; }
-    .contact-box {
-      background: #0077ff;
-      color: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      margin-top: 40px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      animation: pop 0.5s ease-in-out;
-    }
-    @keyframes pop {
-      0% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      background: #fff;
-      color: #0077ff;
-      padding: 12px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    form {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      animation: fadeIn 1s ease-in-out;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-    button {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      background: #0099ff;
-      color: #fff;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #0077cc;
+    .card:hover { transform: translateY(-4px); box-shadow: 0 22px 48px rgba(0, 36, 66, 0.16); }
+    .pill { display: inline-block; padding: 0.35rem 0.75rem; border-radius: 999px; background: var(--blue-100); color: var(--blue-700); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.6rem; }
+
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .step { background: #fff; border-radius: 14px; padding: 1.2rem; border: 1px solid rgba(11,59,96,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.08); }
+    .step strong { font-size: 2rem; color: var(--blue-500); }
+
+    .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .price-card { background: #fff; border-radius: 16px; padding: 1.2rem 1.4rem; border: 1px solid rgba(11,59,96,0.1); box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .price-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,163,255,0.08), rgba(11,59,96,0.04)); z-index: 0; }
+    .price-card > * { position: relative; z-index: 1; }
+    .price-card h3 { margin-bottom: 0.4rem; }
+    .price-tag { font-size: 2rem; font-weight: 800; color: var(--blue-700); margin-bottom: 0.4rem; }
+    .price-card ul { list-style: none; color: var(--muted); margin-top: 0.6rem; display: grid; gap: 0.35rem; }
+    .price-card ul li::before { content: '•'; color: var(--blue-500); margin-right: 0.35rem; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center; }
+
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .quote { background: #fff; border-radius: 14px; padding: 1.1rem 1.2rem; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+    .quote strong { display: block; margin-top: 0.6rem; color: var(--blue-900); }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; }
+    .gallery img { width: 100%; border-radius: 14px; height: 180px; object-fit: cover; box-shadow: 0 10px 20px rgba(0,0,0,0.08); transition: transform 0.2s ease; }
+    .gallery img:hover { transform: scale(1.02); }
+
+    .map-frame iframe { width: 100%; border: none; border-radius: 18px; height: 320px; box-shadow: var(--shadow); }
+
+    .contact-box { background: linear-gradient(120deg, #0f4b7a, #1aa3ff); color: #f4fbff; border-radius: 18px; padding: 1.6rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; align-items: center; box-shadow: 0 18px 40px rgba(0, 40, 80, 0.2); }
+    .contact-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .contact-actions a { background: #fff; color: var(--blue-900); padding: 0.65rem 1rem; border-radius: 12px; font-weight: 700; box-shadow: 0 12px 24px rgba(0,0,0,0.18); }
+    .ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.6); }
+
+    footer { margin-top: 3rem; padding: 1.5rem 0 0.5rem; color: var(--muted); font-size: 0.95rem; }
+
+    @media (max-width: 720px) {
+      nav { flex-direction: column; align-items: flex-start; }
+      .nav-links { width: 100%; justify-content: space-between; }
+      header { padding-bottom: 3.2rem; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>ShineRight Mobile Detailing</h1>
-    <p>Fast • Affordable • I Come To You</p>
+    <div class="page">
+      <nav>
+        <div class="brand"><span>CleanWave</span> Mobile Detailing</div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#pricing">Packages</a>
+          <a href="#contact" class="cta-btn">Book Now</a>
+        </div>
+      </nav>
 
-    <div class="bubble" style="width:60px;height:60px;top:20px;left:20px;"></div>
-    <div class="bubble" style="width:40px;height:40px;top:80px;right:40px;"></div>
-    <div class="bubble" style="width:70px;height:70px;bottom:-10px;left:50%;"></div>
+      <div class="hero">
+        <div>
+          <div class="badge">Westchester • Rye Brook • On-site service</div>
+          <h1>Spotless, protected, and ready to roll—without leaving your driveway.</h1>
+          <p>CleanWave Detailing brings professional interior and exterior care straight to your home. We use pH-balanced products, spotless-rinse water, and careful hands so your vehicle looks incredible and stays protected.</p>
+          <div class="stats">
+            <div class="stat"><strong>350+</strong>Details completed</div>
+            <div class="stat"><strong>5★</strong>Customer-rated service</div>
+            <div class="stat"><strong>24 hr</strong>Flexible scheduling</div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Same-week availability</h3>
+          <p class="lead" style="color:#d7e9ff;">Tell us where you are, pick a time, and we handle the rest with fully mobile power and water.</p>
+          <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <a class="cta-btn" href="tel:914-555-0199">📞 Call 914-555-0199</a>
+            <a class="cta-btn" style="background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.6);" href="#contact">Get a quote</a>
+          </div>
+          <p style="margin-top:0.8rem; color:#cfe7ff;">Licensed • Fully insured • Eco-conscious products</p>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <h2>Services</h2>
-
-    <div class="card">
-      <div class="price">Basic Clean — $40</div>
-      <ul>
-        <li>Quick vacuum</li>
-        <li>Wipe surfaces</li>
-        <li>Windows cleaned</li>
-        <li>Exterior rinse & dry</li>
-        <li>Tire shine</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="price">Standard Detail — $70</div>
-      <ul>
-        <li>Deep vacuum</li>
-        <li>Seat shampoo</li>
-        <li>Interior scrub</li>
-        <li>Hand wash + wax</li>
-        <li>Windows cleaned</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="price">Premium Detail — $120</div>
-      <ul>
-        <li>Full interior shampoo</li>
-        <li>Carpet extraction</li>
-        <li>Steam clean</li>
-        <li>Foam wash</li>
-        <li>Wax + wheel polish</li>
-      </ul>
-    </div>
-
-    <h2>Add-Ons</h2>
-    <div class="card">
-      <ul>
-        <li>Pet Hair: +$20</li>
-        <li>Headlight Restoration: +$25</li>
-        <li>Engine Bay Clean: +$30</li>
-      </ul>
-    </div>
-
-    <div class="contact-box">
-      <h2>Book Now</h2>
-      <p>Text me to schedule your detail.</p>
-      <p><strong>Phone:</strong> 914-313-7140</p>
-      <p><strong>Email:</strong> ShineRightDetail@gmail.com</p>
-      <a class="btn" href="tel:9143137140">Call Now</a>
-    </div>
-
-    <h2>Booking Form</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="text" placeholder="Your Phone Number" required />
-      <input type="text" placeholder="Car Model (ex: Honda Civic)" required />
-      <textarea placeholder="Which service do you want? (Basic, Standard, Premium)" required></textarea>
-      <button type="submit">Submit Request</button>
-    </form>
-
-  </section>
-
-  <!-- Sticky Header Enhancement already exists -->
-
-  <!-- Pricing Section -->
-  <section id="pricing" class="py-16">
-    <h2 class="text-4xl font-bold text-center text-blue-600 mb-10">Pricing</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 max-w-6xl mx-auto">
-      <div class="p-6 rounded-2xl shadow-lg bg-white/80 backdrop-blur pricing-card hover:scale-105 transition cursor-pointer">
-        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Basic Wash</h3>
-        <p class="text-4xl font-bold mb-4">$40</p>
-        <p>Exterior wash, tire shine, windows.</p>
+  <main class="page">
+    <section id="services">
+      <h2>Signature Services</h2>
+      <p class="lead">Every appointment is tailored to your vehicle and your schedule. We prep surfaces, protect delicate materials, and finish with a streak-free shine.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="pill">Exterior Refresh</div>
+          <h3>Foam bath &amp; shine</h3>
+          <p>Pre-rinse, foam cannon wash, decontamination, wheel &amp; tire treatment, and streak-free glass for a showroom glow.</p>
+        </div>
+        <div class="card">
+          <div class="pill">Interior Reset</div>
+          <h3>Deep clean cabin</h3>
+          <p>Full vacuum, stain spotting, steam wipe-down, leather conditioning, and interior UV protection to keep surfaces fresh.</p>
+        </div>
+        <div class="card">
+          <div class="pill">Protection</div>
+          <h3>Ceramic &amp; sealants</h3>
+          <p>Paint-safe clay prep with ceramic spray sealant or wax for months of beading, gloss, and easier maintenance.</p>
+        </div>
+        <div class="card">
+          <div class="pill">Add-ons</div>
+          <h3>Pet hair, headlight, odor</h3>
+          <p>Targeted treatments for pet hair removal, headlight restoration, ozone odor removal, and fabric guard.</p>
+        </div>
       </div>
-      <div class="p-6 rounded-2xl shadow-lg bg-white/80 backdrop-blur pricing-card hover:scale-105 transition cursor-pointer">
-        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Full Interior</h3>
-        <p class="text-4xl font-bold mb-4">$120</p>
-        <p>Vacuum, wipe-down, shampoo, deep clean.</p>
+    </section>
+
+    <section id="process">
+      <div class="grid-2">
+        <div>
+          <h2>Our 4-step detailing process</h2>
+          <p class="lead">We bring purified water, premium products, and careful techniques so your vehicle is cleaned and protected without leaving your driveway.</p>
+          <div class="steps">
+            <div class="step"><strong>01</strong><br>Inspect &amp; protect sensitive areas</div>
+            <div class="step"><strong>02</strong><br>Pre-rinse, foam soak, wheels &amp; tires</div>
+            <div class="step"><strong>03</strong><br>Interior deep clean &amp; conditioning</div>
+            <div class="step"><strong>04</strong><br>Sealant/ceramic protection + final shine</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pill">Mobile ready</div>
+          <h3>Power &amp; water on board</h3>
+          <p>Our van arrives equipped with quiet power, filtered water, and lighting so we can work efficiently at homes, offices, or garages.</p>
+          <ul style="margin-top:0.8rem; color:var(--muted); list-style: none; display:grid; gap:0.4rem;">
+            <li>• Eco-friendly, pH-balanced soaps</li>
+            <li>• Soft microfiber, two-bucket washes</li>
+            <li>• Interior-safe steam and ozone options</li>
+          </ul>
+        </div>
       </div>
-      <div class="p-6 rounded-2xl shadow-lg bg-white/80 backdrop-blur pricing-card hover:scale-105 transition cursor-pointer">
-        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Complete Detail</h3>
-        <p class="text-4xl font-bold mb-4">$250</p>
-        <p>Inside + outside, wax, full treatment.</p>
+    </section>
+
+    <section id="pricing">
+      <h2>Packages &amp; transparent pricing</h2>
+      <p class="lead">Pricing varies by vehicle size and condition. Choose a starting point and we’ll confirm the exact quote before we arrive.</p>
+      <div class="pricing">
+        <div class="price-card">
+          <div class="pill">Quick Refresh</div>
+          <h3>Maintenance detail</h3>
+          <div class="price-tag">$95+</div>
+          <p>Perfect for well-kept daily drivers.</p>
+          <ul>
+            <li>Contactless pre-rinse &amp; foam wash</li>
+            <li>Wheels, tires, and glossy finish</li>
+            <li>Vacuum, wipe-down, streak-free glass</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="pill">Complete</div>
+          <h3>Inside &amp; out detail</h3>
+          <div class="price-tag">$175+</div>
+          <p>Most popular for families and commuters.</p>
+          <ul>
+            <li>Decontamination wash + tire dressing</li>
+            <li>Steam clean plastics &amp; vents</li>
+            <li>Seats and carpets shampoo/condition</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="pill">Protection</div>
+          <h3>Gloss &amp; guard</h3>
+          <div class="price-tag">$250+</div>
+          <p>Long-lasting protection for paint and interior.</p>
+          <ul>
+            <li>Clay prep + wax or ceramic spray sealant</li>
+            <li>Interior UV dressing &amp; leather care</li>
+            <li>Pet hair and odor treatments available</li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Reviews Section -->
-  <section id="reviews" class="py-16 bg-blue-50/50">
-    <h2 class="text-4xl font-bold text-center text-blue-700 mb-10">Customer Reviews</h2>
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
-      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-        <p class="text-lg italic">“Best detailer in Westchester. My car looked brand new.”</p>
-        <p class="mt-4 font-bold">— Jason M.</p>
+    <section id="reviews">
+      <div class="grid-2">
+        <div>
+          <h2>Customers love the convenience</h2>
+          <p class="lead">Five-star service focused on communication, punctuality, and tidy results. We treat every vehicle like our own.</p>
+          <div class="testimonials">
+            <div class="quote">“Showed up on time with everything needed. My SUV looks brand new inside—no more sand or pet hair.”<strong>— Lena R.</strong></div>
+            <div class="quote">“Professional and efficient. The ceramic sealant makes washing so much easier now.”<strong>— Marcus T.</strong></div>
+            <div class="quote">“Great attention to detail and super friendly. Booking was simple, and they texted when on the way.”<strong>— Jason M.</strong></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pill">Gallery</div>
+          <h3>Before &amp; after highlights</h3>
+          <p class="lead">A few recent projects from SUVs, sedans, and weekend cars around Westchester.</p>
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=80" alt="Clean blue car exterior" />
+            <img src="https://images.unsplash.com/photo-1511910849309-0e2b8a8c2e28?auto=format&fit=crop&w=800&q=80" alt="Detailing wheel" />
+            <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=800&q=80" alt="Vacuuming car interior" />
+            <img src="https://images.unsplash.com/photo-1502877828070-33b167ad6860?auto=format&fit=crop&w=800&q=80" alt="Car after ceramic protection" />
+          </div>
+        </div>
       </div>
-      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-        <p class="text-lg italic">“Fast, professional, and super friendly. Highly recommend!”</p>
-        <p class="mt-4 font-bold">— Sarah K.</p>
+    </section>
+
+    <section id="service-area">
+      <h2>Service area</h2>
+      <p class="lead">Based in Rye Brook, NY and serving Westchester County within a ~15 mile radius. Reach out if you’re nearby—we’ll confirm availability fast.</p>
+      <div class="map-frame">
+        <iframe title="Service area map" src="https://www.openstreetmap.org/export/embed.html?bbox=-73.8225%2C40.939%2C-73.643%2C41.108&layer=mapnik&marker=41.0039%2C-73.7104"></iframe>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Placeholder Image Gallery -->
-  <section id="gallery" class="py-16">
-    <h2 class="text-4xl font-bold text-center text-blue-600 mb-10">Before & After Gallery</h2>
-    <p class="text-center text-gray-600 mb-6">(Replace these images with your real detailing photos)</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 max-w-6xl mx-auto">
-      <img src="https://via.placeholder.com/400x250?text=Before+Detail" class="rounded-xl shadow-md hover:scale-105 transition" />
-      <img src="https://via.placeholder.com/400x250?text=After+Detail" class="rounded-xl shadow-md hover:scale-105 transition" />
-      <img src="https://via.placeholder.com/400x250?text=Interior+Deep+Clean" class="rounded-xl shadow-md hover:scale-105 transition" />
-    </div>
-  </section>
-
-  <!-- Floating Bubble Animation -->
-  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none bubble-container"></div>
-
-  <script>
-    // Create floating bubbles
-    const bubbleContainer = document.querySelector('.bubble-container');
-    for (let i = 0; i < 20; i++) {
-      const bubble = document.createElement('div');
-      bubble.classList.add('bubble');
-      bubble.style.left = Math.random() * 100 + '%';
-      bubble.style.animationDuration = 4 + Math.random() * 6 + 's';
-      bubble.style.opacity = 0.4 + Math.random() * 0.5;
-      bubbleContainer.appendChild(bubble);
-    }
-  </script>
-
-  <style>
-    /* Bubble Styles */
-    .bubble {
-      position: absolute;
-      bottom: -150px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(173, 216, 230, 0.6);
-      backdrop-filter: blur(4px);
-      animation: rise linear infinite;
-    }
-    @keyframes rise {
-      from {transform: translateY(0) scale(1);} 
-      to {transform: translateY(-120vh) scale(1.4);} 
-    }
-  </style>
-
-  <!-- Service Area Map -->
-  <section id="service-area" class="py-16 bg-blue-50/50">
-    <h2 class="text-4xl font-bold text-center text-blue-700 mb-6">Service Area</h2>
-    <p class="text-center text-gray-700 mb-6">We serve all locations within a 15-mile radius of Rye Brook, NY.</p>
-
-    <div class="max-w-4xl mx-auto px-6">
-      <iframe
-        width="100%"
-        height="450"
-        style="border:0; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
-        loading="lazy"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-FAKE-KEY-PLACEHOLDER&q=Rye+Brook,NY&zoom=11">
-      </iframe>
-    </div>
-  </section>
-
-  <!-- Why Choose Us -->
-  <section id="why-us" class="py-16">
-    <h2 class="text-4xl font-bold text-center text-blue-700 mb-10">Why Choose CleanWave Detailing?</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
-      <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition why-card">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Mobile Convenience</h3>
-        <p>We come straight to your house so you don’t waste any time waiting at a shop.</p>
+    <section id="contact">
+      <div class="contact-box">
+        <div>
+          <p class="pill" style="background: rgba(255,255,255,0.15); color:#fff;">Let’s get you on the schedule</p>
+          <h2 style="color:#fff; margin:0;">Ready for a spotless ride?</h2>
+          <p style="color:#e8f3ff; margin-top:0.4rem;">Tell us your location, vehicle, and any problem areas. We’ll confirm the quote and arrival time right away.</p>
+        </div>
+        <div class="contact-actions">
+          <a href="tel:914-555-0199">📞 Call or text 914-555-0199</a>
+          <a class="ghost" href="mailto:hello@cleanwavedetailing.com">✉️ Email details</a>
+        </div>
       </div>
+    </section>
+  </main>
 
-      <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition why-card">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Top Quality Results</h3>
-        <p>Your car gets professional-level cleaning that makes it look and feel brand new.</p>
-      </div>
-
-      <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition why-card">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Friendly, Fast Service</h3>
-        <p>We focus on great communication, fast work, and making every customer happy.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Card Animation -->
-  <style>
-    .why-card:hover {
-      transform: translateY(-6px);
-    }
-  </style>
-
-  <!-- Floating Bubbles + Scripts Stay Here -->
+  <footer class="page">
+    <p>CleanWave Mobile Detailing — Fully insured • Eco-friendly products • Satisfaction guaranteed.</p>
+  </footer>
 </body>
 </html>
